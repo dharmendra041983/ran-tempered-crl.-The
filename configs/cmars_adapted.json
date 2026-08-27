@@ -1,0 +1,51 @@
+{
+  "experiment": "CMARS baseline_v2",
+  "baseline_name": "CMARS-inspired adapted sequential cooperative PPO",
+  "reference": {
+    "title": "Flexible RAN Slicing in Open RAN With Constrained Multi-Agent Reinforcement Learning",
+    "authors": "M. Zangooei et al.",
+    "venue": "IEEE Journal on Selected Areas in Communications",
+    "volume": "42",
+    "issue": "2",
+    "pages": "280-294",
+    "year": 2024,
+    "doi": "10.1109/JSAC.2023.3336156"
+  },
+  "faithful_structural_elements": [
+    "sequential inter-slice resource sharing",
+    "shuffled agent order each macro step",
+    "cooperative shared network objective",
+    "local slice plus aggregate/global state",
+    "PPO actor-critic family",
+    "per-slice constraint-aware Lagrangian adaptation"
+  ],
+  "adaptations_for_common_environment": [
+    "single parameter-shared PPO policy with slice identity in observation",
+    "three slice types instead of paper-specific tenant/slice population",
+    "two-dimensional per-slice action adds admission fraction to resource share",
+    "same 7-cell interference and queue dynamics as proposed method",
+    "raw projected per-slice dual ascent rather than exact MAPPOL implementation"
+  ],
+  "training_seeds": [
+    0
+  ],
+  "macro_steps": 90000,
+  "ppo_transitions_per_model": 270000,
+  "evaluation_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "episodes_per_eval_seed_per_condition": 10,
+  "stress_factor": 1.6,
+  "stress_prob_training": 0.4,
+  "eps": [
+    0.2,
+    0.05,
+    0.15
+  ],
+  "warning": "CMARS baseline_v1 had no dual updates and must not be used as constrained baseline.",
+  "bugfix": "Persist Lagrange multipliers and 3000-macro-step cost accumulator across 300-step episode resets."
+}

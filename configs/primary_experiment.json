@@ -1,0 +1,59 @@
+{
+  "experiment": "primary experiment",
+  "variants": {
+    "raw": {
+      "alpha": 0.0
+    },
+    "tempered": {
+      "alpha": 0.5
+    },
+    "full": {
+      "alpha": 1.0
+    }
+  },
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "new_seeds_to_run": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "reuse_j4_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "training_steps": 90000,
+  "evaluation_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "episodes_per_eval_seed_per_condition": 10,
+  "stress_factor": 1.6,
+  "stress_prob_training": 0.4,
+  "eps": [
+    0.2,
+    0.05,
+    0.15
+  ],
+  "raw_eta": 0.02,
+  "dual_update_every": 3000,
+  "bootstrap_replicates": 10000
+}

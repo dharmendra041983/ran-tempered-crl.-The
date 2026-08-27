@@ -1,0 +1,55 @@
+{
+  "experiment": "generalization study",
+  "type": "evaluation-only unseen-condition generalization",
+  "retraining": false,
+  "source_models": "primary experiment frozen policies, all 3 variants, training seeds 0-9",
+  "scenarios": {
+    "load_low_0p85": {
+      "load_scale": 0.85,
+      "stress": false,
+      "capacity_scale": 1.0
+    },
+    "load_high_1p15": {
+      "load_scale": 1.15,
+      "stress": false,
+      "capacity_scale": 1.0
+    },
+    "stress_mild_1p30": {
+      "load_scale": 1.0,
+      "stress_factor": 1.3,
+      "capacity_scale": 1.0
+    },
+    "stress_severe_1p90": {
+      "load_scale": 1.0,
+      "stress_factor": 1.9,
+      "capacity_scale": 1.0
+    },
+    "capacity_down_0p90": {
+      "load_scale": 1.0,
+      "stress_factor": 1.6,
+      "capacity_scale": 0.9
+    },
+    "capacity_up_1p10": {
+      "load_scale": 1.0,
+      "stress_factor": 1.6,
+      "capacity_scale": 1.1
+    }
+  },
+  "evaluation_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "episodes_per_eval_seed": 10,
+  "paired_episode_ids": true,
+  "statistics": {
+    "independent_unit": "training seed",
+    "paired_test": "two-sided Wilcoxon signed-rank",
+    "effect_size": "matched-pairs rank-biserial correlation",
+    "confidence_interval": "hierarchical bootstrap",
+    "bootstrap_replicates": 10000
+  },
+  "note": "Scenario magnitudes are pre-specified before generalization study outcomes; no retraining or post-hoc scenario tuning."
+}

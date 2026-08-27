@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or the accompanying result data, please cite this repository and the associated paper."
+title: "Tempered CRL for Multi-Cell NG-RAN"
+type: software
+authors:
+  - family-names: "Kumar"
+    given-names: "Dharmendra"
+repository-code: "https://github.com/dharmendra041983/ngran-tempered-crl"
+date-released: 2026-08-26
+license: MIT
